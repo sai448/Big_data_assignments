@@ -1,5 +1,5 @@
 Q1. What is the purpose of Python's OOP?
-To solve the complex problem in a easier way and reduce the code lines
+--->To solve the complex problem in a easier way and reduce the code lines
 
 Q2. Where does an inheritance search look for an attribute?
 ---> An inheritance search looks for an attribute first in the instance object, then in the class the instance was created from, then in all higher superclasses, progressing from left to right (by default) . The search stops at the first place the attribute is found.
@@ -11,7 +11,7 @@ Q4. What makes the first argument in a class’s method function special?
 ---> it is not an parameter it is an object reference
 
 Q5. What is the purpose of the init method?
-It is used to assign values to instance variables
+--->It is used to assign values to instance variables
 
 Q6. What is the process for creating a class instance?
 -->To do the various task based on methods  by inistiating the class and to make real world object occupies memory
@@ -112,7 +112,8 @@ Q32. Suppose class C inherits from classes A and B as class C(A,B).Classes A and
 Q33. Which methods/functions do we use to determine the type of instance and inheritance?
 
 
-Q34.Explain the use of the 'The nonlocal keyword is used to work with variables inside nested functions, where the variable should not belong to the inner function.
+Q34.Explain the use of the non local keyword in python.
+--->'The nonlocal keyword is used to work with variables inside nested functions, where the variable should not belong to the inner function.
 
 Q35. What is the global keyword?
 ---> global keyword will make the variable in to global variable it will be accessed anywhere in the code
