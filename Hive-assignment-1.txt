@@ -1,0 +1,22 @@
+
+create table sales_order_csv(
+    > ordernumber int, QUANTITYORDERED int, PRICEEACH double, ORDERLINENUMBER int, SALES double, status string, QTR_ID int,  MONTH_ID int,  YEAR_ID int, PRODUCTLINE string,  MSRP int, PRODUCTCODE varchar(10), PHONE varchar(15),CITY string,STATE string, POSTALCODE varchar(10),
+    > COUNTRY string, TERRITORY string, CONTACTLASTNAME string, CONTACTFIRSTNAME string,DEALSIZE string)
+    > row format delimited
+    > fields terminated by ','
+    > tblproperties ("skip.header.line.count"="1");
+	
+
+	--->Storing file in hdfs
+hadoop fs -put sales_order_data.csv /data 
+
+--->loading data into table
+ load data inpath '/data/sales_order_data.csv' into table sales_order_csv;
+ 
+ 1.select year_id, sum(sales) from sales_order_csv group by year_id;
+ 3.select qtr_id,sum(sales) from sales_order_csv group by qtr_id;
+ 4. select qtr_id from sales_order_csv where sales in (select min(sales) from sales_order_csv)
+ 2. select productline from sales_order_csv where quantityordered in (select max(quantityordered) from sales_order_csv)
+ 6.select city,qtr_id, sum(sales) from sales_order_csv group by qtr_id,city;
+ 
+ 
