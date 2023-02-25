@@ -1,9 +1,9 @@
 Scenario Based questions:
 
 ### Will the reducer work or not if you use “Limit 1” in any HiveQL query?
-..
---> Yes reducer will work
-..
+'''
+ Yes reducer will worK
+ '''
 Suppose I have installed Apache Hive on top of my Hadoop cluster using default metastore configuration. Then, what will happen if we have multiple clients trying to access Hive at the same time? 
 ..
 --> Hive default metastore cant handle multiple requests at the same time.
