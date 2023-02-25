@@ -15,8 +15,8 @@ hadoop fs -put sales_order_data.csv /data
  
  1.select year_id, sum(sales) from sales_order_csv group by year_id;
  3.select qtr_id,sum(sales) from sales_order_csv group by qtr_id;
- 4. select qtr_id from sales_order_csv where sales in (select min(sales) from sales_order_csv)
- 2. select productline from sales_order_csv where quantityordered in (select max(quantityordered) from sales_order_csv)
+ 4. select qtr_id, sum(sales) as min-sales from sales_order_csv group by sales order by min-sales limit 1;
+ 2. select productline , SUM(QUANTITYORDERED) AS MAXIMUM-ORDERED from sales_order_csv group by QUANTITYORDERED orderby MAXIMUM-ORDERED desc limit 1;
  6.select city,qtr_id, sum(sales) from sales_order_csv group by qtr_id,city;
  
  
