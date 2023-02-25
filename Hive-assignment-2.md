@@ -4,36 +4,35 @@ Scenario Based questions:
 ```
  Yes reducer will worK
  ```
-Suppose I have installed Apache Hive on top of my Hadoop cluster using default metastore configuration. Then, what will happen if we have multiple clients trying to access Hive at the same time? 
-..
---> Hive default metastore cant handle multiple requests at the same time.
-..
-Suppose, I create a table that contains details of all the transactions done by the customers: CREATE TABLE transaction_details (cust_id INT, amount FLOAT, month STRING, country STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,’ ;
+### Suppose I have installed Apache Hive on top of my Hadoop cluster using default metastore configuration. Then, what will happen if we have multiple clients trying to access Hive at the same time? 
+```
+ Hive default metastore cant handle multiple requests at the same time.
+ ```
+### Suppose, I create a table that contains details of all the transactions done by the customers: CREATE TABLE transaction_details (cust_id INT, amount FLOAT, month STRING, country STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,’ ;
 Now, after inserting 50,000 records in this table, I want to know the total revenue generated for each month. But, Hive is taking too much time in processing this query. How will you solve this problem and list the steps that I will be taking in order to do so?
-
-..
+```
 1.Create a table with the data and partioned with month column
 2.Insert overwrite table_name partition(Col_name) select cust_id,amount,month,country from  customers
 Hive engine will create partitiones for month based on unique values in month column.
-..
-How can you add a new partition for the month December in the above partitioned table?
-..
+```
+### How can you add a new partition for the month December in the above partitioned table?
+```
 we can either use static partition or dynamic partition.
-..
-I am inserting data into a table based on partitions dynamically. But, I received an error – FAILED ERROR IN SEMANTIC ANALYSIS: Dynamic partition strict mode requires at least one static partition column. How will you remove this error?
-..
+```
+### I am inserting data into a table based on partitions dynamically. But, I received an error – FAILED ERROR IN SEMANTIC ANALYSIS: Dynamic partition strict mode requires at least one static partition column. How will you remove this error?
+```
 we need to set the property to nonstrict
 in strict mode hive will prevent the full table scan, inorder to do full table scan in dynamic partition we need to set it to non strict
-..
+```
 
 Suppose, I have a CSV file – ‘sample.csv’ present in ‘/temp’ directory with the following entries:
 id first_name last_name email gender ip_address
 How will you consume this CSV file into the Hive warehouse using built-in SerDe?
 
 
-Suppose, I have a lot of small CSV files present in the input directory in HDFS and I want to create a single Hive table corresponding to these files. The data in these files are in the format: {id, name, e-mail, country}. Now, as we know, Hadoop performance degrades when we use lots of small files.
+### Suppose, I have a lot of small CSV files present in the input directory in HDFS and I want to create a single Hive table corresponding to these files. The data in these files are in the format: {id, name, e-mail, country}. Now, as we know, Hadoop performance degrades when we use lots of small files.
 So, how will you solve this problem where we want to create a single Hive table for lots of small files without degrading the performance of the system?
-..
+```
 Create external table and point to that directory
 
 syntax:
@@ -45,16 +44,16 @@ country string)
 row format delimited
 fields terminated by ','
 location hdfs directory
-..
+```
 
 
-LOAD DATA LOCAL INPATH ‘Home/country/state/’
+### LOAD DATA LOCAL INPATH ‘Home/country/state/’
 OVERWRITE INTO TABLE address;
 
 The following statement failed to execute. What can be the cause?
-..
+```
 LOCAL PATH IS INCORRECT WE SHOULD GIVE FILE://
-
+```
 
 Is it possible to add 100 nodes when we already have 100 nodes in Hive? If yes, how?
 
