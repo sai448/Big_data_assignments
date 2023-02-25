@@ -1,6 +1,6 @@
 Scenario Based questions:
 
-Will the reducer work or not if you use “Limit 1” in any HiveQL query?
+### Will the reducer work or not if you use “Limit 1” in any HiveQL query?
 ..
 --> Yes reducer will work
 ..
