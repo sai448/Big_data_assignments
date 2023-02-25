@@ -10,6 +10,7 @@ Suppose I have installed Apache Hive on top of my Hadoop cluster using default m
 ..
 Suppose, I create a table that contains details of all the transactions done by the customers: CREATE TABLE transaction_details (cust_id INT, amount FLOAT, month STRING, country STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,’ ;
 Now, after inserting 50,000 records in this table, I want to know the total revenue generated for each month. But, Hive is taking too much time in processing this query. How will you solve this problem and list the steps that I will be taking in order to do so?
+
 ..
 1.Create a table with the data and partioned with month column
 2.Insert overwrite table_name partition(Col_name) select cust_id,amount,month,country from  customers
