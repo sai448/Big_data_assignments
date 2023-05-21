@@ -88,7 +88,33 @@ Download a data from the given location -
 https://archive.ics.uci.edu/ml/machine-learning-databases/00360/
 
 1. Create a hive table as per given schema in your dataset 
+```
+create table if not exists airquality(
+ date1 string,
+ Time1 string,
+ CO Float,
+ po smallint,
+ nmhc smallint,
+ c6h6 float,
+ pt08 smallint,
+ nox smallint,
+ pt08s3 smallint,
+ no2 smallint,
+ pt08s4 smallint,
+ pt08s5 smallint,
+ t float,
+ rh float,
+ ah double)
+ row format delimited
+ fields terminated by ';'
+ TBLPROPERTIES ("skip.header.line.count"="1");
+```
 2. try to place a data into table location
+```
+load data local inpath 'file:///config/workspace/AirQualityUCI.csv' into table airquality;
+![image](https://github.com/sai448/Big_data_assignments/assets/79242092/7e5bc8f9-c035-4eda-aa66-81873ab6f2d9)
+
+```
 3. Perform a select operation . 
 4. Fetch the result of the select operation in your local as a csv file . 
 5. Perform group by operation . 
