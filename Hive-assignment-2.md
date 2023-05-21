@@ -112,11 +112,16 @@ create table if not exists airquality(
 2. try to place a data into table location
 ```
 load data local inpath 'file:///config/workspace/AirQualityUCI.csv' into table airquality;
-<img title="load cmd" alt="Alt text" src="C:\Users\BONDALAPATI SAITEJA\OneDrive\Pictures\Screenshots\Screenshot (88).png">
 
 ```
 3. Perform a select operation . 
+```
+select * from airquality ;
+```
 4. Fetch the result of the select operation in your local as a csv file . 
+```
+insert overwrite local directory '/config/workspace/test.csv' select * from airquality limit 10;
+```
 5. Perform group by operation . 
 7. Perform filter operation at least 5 kinds of filter examples . 
 8. show and example of regex operation
