@@ -112,7 +112,7 @@ create table if not exists airquality(
 2. try to place a data into table location
 ```
 load data local inpath 'file:///config/workspace/AirQualityUCI.csv' into table airquality;
-![image](https://github.com/sai448/Big_data_assignments/assets/79242092/7e5bc8f9-c035-4eda-aa66-81873ab6f2d9)
+<img title="load cmd" alt="Alt text" src="C:\Users\BONDALAPATI SAITEJA\OneDrive\Pictures\Screenshots\Screenshot (88).png">
 
 ```
 3. Perform a select operation . 
