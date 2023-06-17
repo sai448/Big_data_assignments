@@ -123,14 +123,37 @@ select * from airquality ;
 insert overwrite local directory '/config/workspace/test.csv' select * from airquality limit 10;
 ```
 5. Perform group by operation . 
-7. Perform filter operation at least 5 kinds of filter examples . 
-8. show and example of regex operation
-9. alter table operation 
-10 . drop table operation
-12 . order by operation . 
-13 . where clause operations you have to perform . 
-14 . sorting operation you have to perform . 
+```
+select date1,avg(co) from airquality group by date1;
+```
+6. Perform filter operation at least 5 kinds of filter examples . 
+```
+select * from(select  to_date(from_unixtime(UNIX_TIMESTAMP(date1,'dd/mm/yyyy'))) as date3 from airquality) as innertable where date3 between '2004-01-10'and '2004-02-10';
+ select * from(select  to_date(from_unixtime(UNIX_TIMESTAMP(date1,'dd/mm/yyyy'))) as date3 from airquality) as innertable where date3 '2004-02-10';
+ ```
+7. show and example of regex operation
+
+8. alter table operation 
+```
+alter table airquality rename to airquality1;
+```
+9 . drop table operation
+```
+drop table airquality;
+```
+10 . order by operation . 
+```
+select * from airquality orderby po;
+```
+11. where clause operations you have to perform . 
+```
+select * from(select  to_date(from_unixtime(UNIX_TIMESTAMP(date1,'dd/mm/yyyy'))) as date3 from airquality) as innertable where date3 between '2004-01-10'and '2004-02-10';
+```
+12 . sorting operation you have to perform . 
 15 . distinct operation you have to perform . 
+```
+select distinct(po) frpm airquality;
+```
 16 . like an operation you have to perform . 
 17 . union operation you have to perform . 
 18 . table view operation you have to perform . 
